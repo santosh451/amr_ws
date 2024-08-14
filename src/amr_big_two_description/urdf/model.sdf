@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="amr_big_two">  
+  <static>false</static>
+
+  <!-- ****************************** LIDAR *****************************    -->
+
+  
+  
+  
+  
+</model>
+</sdf>

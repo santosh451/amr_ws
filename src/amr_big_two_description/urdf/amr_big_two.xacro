@@ -1,0 +1,405 @@
+<?xml version="1.0" ?>
+<robot name="amr_big_two" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find amr_big_two_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find amr_big_two_description)/urdf/amr_big_two.trans" />
+<xacro:include filename="$(find amr_big_two_description)/urdf/amr_big_two.gazebo" />
+<xacro:include filename="$(find amr_big_two_description)/urdf/diff_dr.xacro" />
+<!-- <xacro:include filename="$(find amr_big_two_description)/urdf/model.sdf" /> -->
+<link name="base_link">
+  <inertial>
+    <origin xyz="-6.322323894127283e-05 0.018906569789233326 -0.030654111720942918" rpy="0 0 0"/>
+    <mass value="120.91992932004462"/>
+    <inertia ixx="2.794961" iyy="6.095063" izz="8.20746" ixy="0.136031" iyz="-0.0" ixz="-0.000844"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part5_v1__2__1">
+  <inertial>
+    <origin xyz="4.3906878133270766e-10 -4.302464876940193e-07 -4.306855561631018e-07" rpy="0 0 0"/>
+    <mass value="2.40589382113527"/>
+    <inertia ixx="0.001679" iyy="0.001686" izz="0.001686" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.325 -0.018907 0.131093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part5_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.325 -0.018907 0.131093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part5_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part5_v1__3__1">
+  <inertial>
+    <origin xyz="4.390676155985318e-10 -4.302464877738166e-07 -4.306855559965683e-07" rpy="0 0 0"/>
+    <mass value="2.40589382113527"/>
+    <inertia ixx="0.001686" iyy="0.001686" izz="0.001679" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.325 -0.018907 0.131093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part5_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.325 -0.018907 0.131093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part5_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part5_v1_1">
+  <inertial>
+    <origin xyz="-9.626552663696415e-10 0.05374742111416567 -4.30685568639233e-07" rpy="0 0 0"/>
+    <mass value="4.855896297034494"/>
+    <inertia ixx="0.010976" iyy="0.012566" izz="0.010976" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.218907 0.081093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part5_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.218907 0.081093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part5_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part4_v2_1">
+  <inertial>
+    <origin xyz="6.415449444004547e-09 -0.05000043024648709 -4.3068555380387785e-07" rpy="0 0 0"/>
+    <mass value="1.0491385705895424"/>
+    <inertia ixx="0.00449" iyy="0.007241" izz="0.00449" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.318907 0.081093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part4_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.318907 0.081093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part4_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part5_v1__1__1">
+  <inertial>
+    <origin xyz="-9.62655217658419e-10 -0.053748281607141346 -4.306855433816592e-07" rpy="0 0 0"/>
+    <mass value="4.855896297034494"/>
+    <inertia ixx="0.010976" iyy="0.012566" izz="0.010976" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.181093 0.081093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part5_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.181093 0.081093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part5_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part4_v2__1__1">
+  <inertial>
+    <origin xyz="6.415449493156268e-09 0.04999956975351136 -4.3068555424796706e-07" rpy="0 0 0"/>
+    <mass value="1.0491385705895424"/>
+    <inertia ixx="0.00449" iyy="0.007241" izz="0.00449" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.281093 0.081093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part4_v2__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.281093 0.081093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part4_v2__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cam_v1_1">
+  <inertial>
+    <origin xyz="0.013281155022479785 -0.0474661631573977 -4.3068555617697957e-07" rpy="0 0 0"/>
+    <mass value="0.7372993663827108"/>
+    <inertia ixx="0.000892" iyy="8.8e-05" izz="0.000888" ixy="-1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.374 -0.066407 -0.123907" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/cam_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.374 -0.066407 -0.123907" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/cam_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part2_v2_1">
+  <inertial>
+    <origin xyz="-0.34999155687100597 -0.020007576954818838 0.034342740694503535" rpy="0 0 0"/>
+    <mass value="4.521693370371786"/>
+    <inertia ixx="0.175661" iyy="0.297913" izz="0.470272" ixy="-0.00279" iyz="1e-06" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.35 -0.038907 -0.028907" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part2_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.35 -0.038907 -0.028907" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part2_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part7_v1_1">
+  <inertial>
+    <origin xyz="0.007500000439068566 -4.3024648671563526e-07 -4.306855559965683e-07" rpy="0 0 0"/>
+    <mass value="0.02080814259151114"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.39 -0.238907 0.141093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part7_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.39 -0.238907 0.141093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part7_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part7_v1__1__1">
+  <inertial>
+    <origin xyz="0.007500000439068566 -4.3024648660461295e-07 -4.306855559410572e-07" rpy="0 0 0"/>
+    <mass value="0.02080814259151114"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.39 -0.218907 0.141093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part7_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.39 -0.218907 0.141093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part7_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part7_v1__3__1">
+  <inertial>
+    <origin xyz="0.0075000004390688435 -4.3024648785361386e-07 -4.306855561631018e-07" rpy="0 0 0"/>
+    <mass value="0.02080814259151114"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.39 0.181093 0.141093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part7_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.39 0.181093 0.141093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part7_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part7_v1__2__1">
+  <inertial>
+    <origin xyz="0.0075000004390688435 -4.302464879368806e-07 -4.306855561631018e-07" rpy="0 0 0"/>
+    <mass value="0.02080814259151114"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.39 0.201093 0.141093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part7_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.39 0.201093 0.141093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part7_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="part3_v1_1">
+  <inertial>
+    <origin xyz="-0.0004887973730421225 -4.309599892400595e-07 0.03497672917266807" rpy="0 0 0"/>
+    <mass value="29.80443565344521"/>
+    <inertia ixx="1.027826" iyy="1.750686" izz="2.729484" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.018907 -0.088907" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.018907 -0.088907" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find amr_big_two_description)/meshes/part3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_lidar_link">   
+
+</link>
+<link name="back_lidar_link">   
+
+</link>
+
+<joint name="Ball 1" type="continuous">
+  <origin xyz="0.325 0.018907 -0.131093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part5_v1__2__1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Ball 2" type="continuous">
+  <origin xyz="-0.325 0.018907 -0.131093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part5_v1__3__1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Revolute 3" type="continuous">
+  <origin xyz="0.0 0.218907 -0.081093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part5_v1_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 4" type="fixed">
+  <origin xyz="0.0 0.1 0.0" rpy="0 0 0"/>
+  <parent link="part5_v1_1"/>
+  <child link="part4_v2_1"/>
+</joint>
+
+<joint name="Revolute 5" type="continuous">
+  <origin xyz="0.0 -0.181093 -0.081093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part5_v1__1__1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 6" type="fixed">
+  <origin xyz="0.0 -0.1 0.0" rpy="0 0 0"/>
+  <parent link="part5_v1__1__1"/>
+  <child link="part4_v2__1__1"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="0.374 0.0475 0.035" rpy="0 0 0"/>
+  <parent link="part3_v1_1"/>
+  <child link="cam_v1_1"/>
+</joint>
+
+
+<joint name="Rigid 8" type="fixed">
+  <origin xyz="0.35 0.038907 0.028907" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part2_v2_1"/>
+</joint>
+
+<joint name="Rigid 10" type="fixed">
+  <origin xyz="0.39 0.238907 -0.141093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part7_v1_1"/>
+</joint>
+
+<joint name="Rigid 11" type="fixed">
+  <origin xyz="0.39 0.218907 -0.141093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part7_v1__1__1"/>
+</joint>
+
+<joint name="Rigid 12" type="fixed">
+  <origin xyz="0.39 -0.181093 -0.141093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part7_v1__3__1"/>
+</joint>
+
+<joint name="Rigid 13" type="fixed">
+  <origin xyz="0.39 -0.201093 -0.141093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="part7_v1__2__1"/>
+</joint>
+
+<joint name="Rigid 14" type="fixed">
+  <origin xyz="-0.35 -0.02 0.06" rpy="0 0 0"/>
+  <parent link="part2_v2_1"/>
+  <child link="part3_v1_1"/>
+</joint>
+
+<joint name="front_lidar_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="front_lidar_link"/>
+  <origin xyz="0.35 -0.25 0.06" rpy="0 0 0"/>
+</joint>
+
+<joint name="back_lidar_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="back_lidar_link"/>
+  <origin xyz="-0.35 0.3 0.06" rpy="0 0 0"/>
+</joint>
+
+</robot>

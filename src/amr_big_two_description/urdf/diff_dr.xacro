@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+   <gazebo>
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+            <!-- Wheel info-->
+            <left_joint>Revolute 3</left_joint>
+            <right_joint>Revolute 5</right_joint>
+            <wheel_separation>0.35</wheel_separation>
+            <wheel_diameter>0.1</wheel_diameter>
+
+            <!-- Limits-->
+            <max_wheel_torque>200</max_wheel_torque>
+            <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+            <!-- Output-->
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+
+            <publish_odom>true</publish_odom> 
+            <publish_odom_tf>true</publish_odom_tf> 
+            <publish_wheel_tf>true</publish_wheel_tf> 
+
+        </plugin>
+     </gazebo>
+     <gazebo reference="front_lidar_link">
+        <sensor name="lidar_1" type="ray">
+            <pose>0.0 0 1.0 0 0 0</pose>
+            <always_on>true</always_on>
+            <visualize>true</visualize>
+            <update_rate>5</update_rate>
+            <ray>
+              <scan>
+                <horizontal>
+                  <samples>360</samples>
+                  <resolution>1.00000</resolution>
+                  <min_angle>-3.141592</min_angle>
+                  <max_angle>1.570796</max_angle>
+                </horizontal>
+              </scan>
+              <range>
+                <min>0.120000</min>
+                <max>6.5</max>
+                <resolution>0.015000</resolution>
+              </range>
+              <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+              </noise>
+            </ray>
+            <plugin name="scan_front" filename="libgazebo_ros_ray_sensor.so">
+              <ros>
+                <remapping>~/out:=scan_front</remapping>
+              </ros>
+              <output_type>sensor_msgs/LaserScan</output_type>
+              <frame_name>front_lidar_link</frame_name>
+            </plugin>
+        </sensor>
+      </gazebo>
+
+    <gazebo reference="back_lidar_link">
+       <sensor name="lidar_2" type="ray">
+           <pose>0.0 0 1.0 0 0 0</pose>
+           <always_on>true</always_on>
+           <visualize>true</visualize>
+           <update_rate>5</update_rate>
+           <ray>
+             <scan>
+               <horizontal>
+                 <samples>360</samples>
+                 <resolution>1.00000</resolution>
+                 <min_angle>-0.000000</min_angle>
+                  <max_angle>4.712388</max_angle>
+               </horizontal>
+             </scan>
+             <range>
+               <min>0.120000</min>
+               <max>6.5</max>
+               <resolution>0.015000</resolution>
+             </range>
+             <noise>
+               <type>gaussian</type>
+               <mean>0.0</mean>
+               <stddev>0.01</stddev>
+             </noise>
+           </ray>
+           <plugin name="scan_back" filename="libgazebo_ros_ray_sensor.so">
+             <ros>
+               <remapping>~/out:=scan_back</remapping>
+             </ros>
+             <output_type>sensor_msgs/LaserScan</output_type>
+             <frame_name>back_lidar_link</frame_name>
+           </plugin>
+       </sensor>
+     </gazebo>
+     
+
+</robot>
