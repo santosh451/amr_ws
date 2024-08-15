@@ -39,9 +39,6 @@ def generate_launch_description():
                 'gzserver.launch.py'
             ])
         ]),
-        launch_arguments={
-            'pause': 'true'
-        }.items()
     )
 
     gazebo_client = IncludeLaunchDescription(

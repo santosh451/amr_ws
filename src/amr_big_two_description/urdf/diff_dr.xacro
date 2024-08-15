@@ -6,8 +6,8 @@
             <!-- Wheel info-->
             <left_joint>Revolute 3</left_joint>
             <right_joint>Revolute 5</right_joint>
-            <wheel_separation>0.35</wheel_separation>
-            <wheel_diameter>0.1</wheel_diameter>
+            <wheel_separation>0.5</wheel_separation>
+            <wheel_diameter>0.185</wheel_diameter>
 
             <!-- Limits-->
             <max_wheel_torque>200</max_wheel_torque>
