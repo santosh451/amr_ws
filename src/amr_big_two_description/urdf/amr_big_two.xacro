@@ -300,15 +300,10 @@
   </collision>
 </link>
 
-<link name="front_lidar_link">   
-
-</link>
-<link name="back_lidar_link">   
-
-</link>
-<link name="laser_link">   
-
-</link>
+<link name="front_lidar_link"/>
+<link name="back_lidar_link"/>
+<link name="laser_link"/>
+<link name="imu_link"/>
 
 <joint name="Ball 1" type="continuous">
   <origin xyz="0.325 0.018907 -0.131093" rpy="0 0 0"/>
@@ -397,6 +392,12 @@
   <parent link="base_link"/>
   <child link="front_lidar_link"/>
   <origin xyz="0.35 -0.25 0.06" rpy="0 0 0"/>
+</joint>
+
+<joint name="imu" type="fixed">
+  <parent link="base_link"/>
+  <child link="imu_link"/>
+  <origin xyz="0.0 0.0 0.04" rpy="0 0 0"/>
 </joint>
 
 <joint name="back_lidar_joint" type="fixed">
