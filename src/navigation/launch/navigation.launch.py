@@ -20,14 +20,14 @@ def generate_launch_description():
 
     return LaunchDescription([
 
-        # Node(
-        #     package='rviz2',
-        #     executable='rviz2',
-        #     name='rviz2',
-        #     output='screen',
-        #     # Uncomment and set the correct path if you have an RViz config file
-        #     # arguments=['-d', os.path.join(config_dir, 'rviz_config.rviz')],
-        # ),
+        Node(
+            package='rviz2',
+            executable='rviz2',
+            name='rviz2',
+            output='screen',
+            # Uncomment and set the correct path if you have an RViz config file
+            # arguments=['-d', os.path.join(config_dir, 'rviz_config.rviz')],
+        ),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
