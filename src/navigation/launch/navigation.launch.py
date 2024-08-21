@@ -10,7 +10,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 def generate_launch_description():
     config_dir = os.path.join(get_package_share_directory('navigation'), 'config')
     map_dir = os.path.join(get_package_share_directory('navigation'), 'map')
-    map_file = os.path.join(map_dir, 'first_map.yaml')
+    map_file = os.path.join(map_dir, 'mp102.yaml')
     param_file = os.path.join(config_dir, 'params.yaml')
 
     if not os.path.exists(map_file):
