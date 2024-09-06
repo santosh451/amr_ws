@@ -61,7 +61,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(cartographer_slam_path)
     )
 
-    ld.add_action(gazebo_launch)
+    # ld.add_action(gazebo_launch)
     ld.add_action(merge_laser_launch)
     ld.add_action(ekf_launch)
     ld.add_action(navigation_launch)
