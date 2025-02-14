@@ -15,11 +15,17 @@ find_package(rclpy REQUIRED)
 
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 install( DIRECTORY launch/
          DESTINATION share/${PROJECT_NAME}/launch)
 install( DIRECTORY scripts/
          DESTINATION share/${PROJECT_NAME}/scripts)
+install( DIRECTORY worlds/
+         DESTINATION share/${PROJECT_NAME}/worlds)
+
+
 install( DIRECTORY config/
          DESTINATION share/${PROJECT_NAME}/config)
 install( DIRECTORY map/
@@ -37,6 +43,11 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-install(PROGRAMS scripts/four_point_nav.py DESTINATION lib/${PROJECT_NAME})
+# install(PROGRAMS scripts/four_point_nav.py DESTINATION lib/${PROJECT_NAME})
+
+add_executable(tf_node scripts/tf_pub.cpp)
+ament_target_dependencies(tf_node rclcpp tf2_ros geometry_msgs)
+
+install(TARGETS tf_node DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

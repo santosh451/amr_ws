@@ -13,6 +13,11 @@ def generate_launch_description():
     share_dir = get_package_share_directory('amr_big_two_description')
 
     xacro_file = os.path.join(share_dir, 'urdf', 'amr_big_two.xacro')
+
+    world_dir = get_package_share_directory('navigation')
+
+    world_file_path = os.path.join(world_dir, 'worlds', 'new2_world.world')
+
     robot_description_config = xacro.process_file(xacro_file)
     robot_urdf = robot_description_config.toxml()
 
@@ -39,6 +44,7 @@ def generate_launch_description():
                 'gzserver.launch.py'
             ])
         ]),
+        launch_arguments={'world': world_file_path,}.items(),
     )
 
     gazebo_client = IncludeLaunchDescription(
