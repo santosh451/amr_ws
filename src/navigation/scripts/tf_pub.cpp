@@ -52,7 +52,8 @@ int main(int argc, char *argv[])
     auto node = std::make_shared<StaticTFPublisher>();
     
     // Ensure messages are published before shutdown
-    rclcpp::sleep_for(std::chrono::milliseconds(100));
+    rclcpp::spin(node);
+    // rclcpp::sleep_for(std::chrono::milliseconds(100));
     
     // rclcpp::shutdown();
     return 0;

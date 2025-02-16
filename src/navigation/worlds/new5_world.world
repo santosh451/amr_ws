@@ -1,5 +1,67 @@
+<?xml version="1.0" ?>
 <sdf version='1.7'>
   <world name='default'>
+     <actor name="animated_box">
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.2 1.2 1.2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <script>
+          <loop>true</loop>
+          <delay_start>0.000000</delay_start>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+            <waypoint>
+                <time>0.0</time>
+                <pose>-5 0 0.6 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>18.0</time>
+                <pose>0 -5 0.6 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>36.0</time>
+                <pose>-5 0 0.6 0 0 0</pose>
+            </waypoint>
+          </trajectory>
+      </script>
+    </actor>
+    <actor name="animated_box_1">
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.2 1.2 1.2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <script>
+          <loop>true</loop>
+          <delay_start>0.000000</delay_start>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+            <waypoint>
+                <time>0.0</time>
+                <pose>-18 0 0.6 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>18.0</time>
+                <pose>-18 -15 0.6 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+                <time>36.0</time>
+                <pose>-18 0 0.6 0 0 0</pose>
+            </waypoint>
+          </trajectory>
+      </script>
+    </actor>
+
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
@@ -578,22 +640,22 @@
         <pose>0 0 10 0 -0 0</pose>
       </light>
       <light name='user_directional_light_0'>
-        <pose>2.19345 2.7816 1 0 -0 0</pose>
+        <pose>2.19345 2.7816 4 0 -0 0</pose>
       </light>
       <light name='user_directional_light_1'>
-        <pose>8.20427 3.3882 1 0 -0 0</pose>
+        <pose>8.20427 3.3882 4 0 -0 0</pose>
       </light>
       <light name='user_directional_light_2'>
-        <pose>-4.44235 2.83674 1 0 -0 0</pose>
+        <pose>-4.44235 2.83674 4 0 -0 0</pose>
       </light>
       <light name='user_directional_light_3'>
-        <pose>2.24863 -3.56007 1 0 -0 0</pose>
+        <pose>2.24863 -3.56007 4 0 -0 0</pose>
       </light>
       <light name='user_directional_light_4'>
-        <pose>2.43241 9.1233 1 0 -0 0</pose>
+        <pose>2.43241 9.1233 4 0 -0 0</pose>
       </light>
       <light name='user_point_light_0'>
-        <pose>0.00602 0.042738 1 0 -0 0</pose>
+        <pose>0.00602 0.042738 4 0 -0 0</pose>
       </light>
     </state>
     <gui fullscreen='0'>

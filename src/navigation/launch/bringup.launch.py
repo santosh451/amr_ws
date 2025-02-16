@@ -1,7 +1,7 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
 # from launch_ros.actions import Node
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, RegisterEventHandler, LogInfo, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 import os
 from ament_index_python.packages import get_package_share_directory
@@ -42,19 +42,31 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(cartographer_slam_path)
     )
     tf_node = Node(
-        package='navigation',  # Replace with your actual package name
+        package='navigation', 
         executable='tf_node',
         name='tf_node',
         output='screen'
     )
+    robo = TimerAction(
+        period=5.0,
+        actions=[lidar_merge_launch, ekf_launch, navigation_launch],
+    )
+    robo_map = TimerAction(
+        period=5.0,
+        actions=[lidar_merge_launch, ekf_launch],
+    )
+    tf_node_tm = TimerAction(
+        period=10.0,
+        actions=[tf_node, LogInfo(msg="ft_done")],
+    )
 
     ld.add_action(robot_launch)
-    ld.add_action(lidar_merge_launch)
-    ld.add_action(ekf_launch)
+    ld.add_action(robo)
+    # ld.add_action(ekf_launch)
     # ld.add_action(navigation_launch)
-    ld.add_action(tf_node)
+    ld.add_action(tf_node_tm)
     # ld.add_action(static_tf_launch)
-    ld.add_action(cartographer_launch)
+    # ld.add_action(cartographer_launch)
 
 
     return ld
