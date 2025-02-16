@@ -51,10 +51,10 @@ def generate_launch_description():
     ld.add_action(robot_launch)
     ld.add_action(lidar_merge_launch)
     ld.add_action(ekf_launch)
-    ld.add_action(navigation_launch)
+    # ld.add_action(navigation_launch)
     ld.add_action(tf_node)
     # ld.add_action(static_tf_launch)
-    # ld.add_action(cartographer_launch)
+    ld.add_action(cartographer_launch)
 
 
     return ld

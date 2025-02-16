@@ -10,7 +10,7 @@ def generate_launch_description():
     # world_file_path = '/home/santosh/amr_big_two_description/src/navigation/worlds/mv_world.world'
     world_dir = get_package_share_directory('navigation')
 
-    world_path = os.path.join(world_dir, 'worlds', 'new2_world.world')
+    world_path = os.path.join(world_dir, 'worlds', 'new5_world.world')
     
     return LaunchDescription([
         # Declare the launch argument for the world file
