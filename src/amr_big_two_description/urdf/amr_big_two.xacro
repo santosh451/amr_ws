@@ -5,7 +5,37 @@
 <xacro:include filename="$(find amr_big_two_description)/urdf/amr_big_two.trans" />
 <xacro:include filename="$(find amr_big_two_description)/urdf/amr_big_two.gazebo" />
 <xacro:include filename="$(find amr_big_two_description)/urdf/diff_dr.xacro" />
-<!-- <xacro:include filename="$(find amr_big_two_description)/urdf/model.sdf" /> -->
+<xacro:include filename="$(find amr_big_two_description)/urdf/depth_cam.xacro" />
+
+<link name="depth_link"/>
+<link name="camera_link"/>
+<!-- <link name='world'/> -->
+<link name='depth_link_optical'/>
+
+<!-- <joint name="fix_world" type="fixed">
+  <parent link="world"/>
+  <child link="base_link"/>
+  <origin xyz="0.0 0 0" rpy="0 0 0"/>
+</joint>  -->
+
+<joint name="fix_depth" type="fixed">
+  <parent link="depth_link"/>
+  <child link="depth_link_optical"/>
+  <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+</joint> 
+
+<joint name="depth" type="fixed">
+  <parent link="cam_v1_1"/>
+  <child link="depth_link"/>
+  <origin xyz="0.4 0 0" rpy="0 0 0"/>
+</joint> 
+
+<joint name="camera" type="fixed">
+  <parent link="cam_v1_1"/>
+  <child link="camera_link"/>
+  <origin xyz="0.4 0 0" rpy="0 0 0"/>
+</joint> 
+
 <link name="base_link">
   <inertial>
     <origin xyz="-6.322323894127283e-05 0.018906569789233326 -0.030654111720942918" rpy="0 0 0"/>
