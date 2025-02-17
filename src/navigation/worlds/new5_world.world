@@ -31,7 +31,7 @@
           </trajectory>
       </script>
     </actor>
-    <actor name="animated_box_1">
+    <!-- <actor name="animated_box_1">
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -60,7 +60,7 @@
             </waypoint>
           </trajectory>
       </script>
-    </actor>
+    </actor> -->
 
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
