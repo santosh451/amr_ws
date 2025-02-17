@@ -52,11 +52,11 @@ def generate_launch_description():
         actions=[lidar_merge_launch, ekf_launch, navigation_launch],
     )
     robo_map = TimerAction(
-        period=5.0,
+        period=3.0,
         actions=[lidar_merge_launch, ekf_launch],
     )
     tf_node_tm = TimerAction(
-        period=10.0,
+        period=6.0,
         actions=[tf_node, LogInfo(msg="ft_done")],
     )
 

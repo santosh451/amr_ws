@@ -16,6 +16,8 @@ def generate_launch_description():
 
     world_dir = get_package_share_directory('navigation')
 
+    rviz_config_file = os.path.join(share_dir, 'config', 'new_rviz.rviz')
+
     world_file_path = os.path.join(world_dir, 'worlds', 'new5_world.world')
 
     robot_description_config = xacro.process_file(xacro_file)
@@ -57,6 +59,14 @@ def generate_launch_description():
         ])
     )
 
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        arguments=['-d', rviz_config_file],
+        output='screen'
+    )
+
     urdf_spawn_node = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
@@ -74,4 +84,5 @@ def generate_launch_description():
         gazebo_server,
         gazebo_client,
         urdf_spawn_node,
+        rviz_node
     ])
